@@ -8,7 +8,10 @@ pipeline {
             steps {
                 build 'BuildApp'
                 echo 'Building..'
+                echo 'Test'
             }
         }
     }
 }
+
+
