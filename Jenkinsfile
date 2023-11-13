@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('BuildApp') {
             steps {
+                build 'BuildApp'
                 echo 'Building..'
             }
         }
