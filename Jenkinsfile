@@ -49,7 +49,7 @@ pipeline {
     //             // nog geen idee hoe dit te doen
     //         }
     //     }
-    // }
+    }
 
     post {
         success {
