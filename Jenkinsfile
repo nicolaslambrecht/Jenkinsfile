@@ -35,7 +35,6 @@ pipeline {
                     sh "echo $USER"
                     sh 'dotnet restore'
                     sh 'dotnet build'
-                    archiveArtifacts artifacts: 'SportStore.zip'
                 }
             }
         }
