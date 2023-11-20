@@ -16,6 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
+                    sh "cd /home/vagrant"
                     git branch: 'main', url: 'https://github.com/HoGentTIN/p3ops-demo-app.git'
                 }
             }
