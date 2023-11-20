@@ -26,7 +26,6 @@ pipeline {
             steps {
                 echo "building the application..."
                 script {
-                    sh 'make'
                     sh 'dotnet restore'
                     sh 'dotnet build'
                 }
