@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', url: 'git@github.com:HoGentTIN/p3ops-demo-app.git'
+                    git branch: 'main', url: 'https://github.com/HoGentTIN/p3ops-demo-app.git'
                 }
             }
         }
