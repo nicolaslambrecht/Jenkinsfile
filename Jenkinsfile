@@ -35,6 +35,7 @@ pipeline {
         stage("test") {
             
             steps {
+                echo "testing the application..."
                 script {
                     //unit testing
                     sh 'dotnet test'
