@@ -4,12 +4,12 @@ pipeline {
 
     agent any
 
-    environment {
-        // Define your GitHub credentials
-        GITHUB_CREDENTIALS = credentials('jenkins')
-        // Define the path to your private key used for accessing GitHub
-        SSH_PRIVATE_KEY = credentials('~/.ssh/id_rsa')
-    }
+    // environment {
+    //     // Define your GitHub credentials
+    //     GITHUB_CREDENTIALS = credentials('jenkins')
+    //     // Define the path to your private key used for accessing GitHub
+    //     SSH_PRIVATE_KEY = credentials('~/.ssh/id_rsa')
+    // }
 
     stages {
 
