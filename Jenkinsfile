@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    sh "sudo su vagrant"
+                    sh "sudo su -s /bin/bash jenkins"
                     git branch: 'main', url: 'https://github.com/HoGentTIN/p3ops-demo-app.git'
                 }
             }
