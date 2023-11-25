@@ -62,7 +62,7 @@ pipeline {
             
             steps {
                 script {
-                    sh 'scp -r . user@application-server:/path/to/destination'
+                    sh 'scp -r . operationsg11@104.45.53.118:/home/operationsg11/test'
                 }
             }
         }
