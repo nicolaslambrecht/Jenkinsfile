@@ -4,17 +4,17 @@ pipeline {
 
     agent any
 
-    environment {
-        // Define your GitHub credentials
-        // GITHUB_CREDENTIALS = credentials('jenkins')
-        // Define the path to your private key used for accessing GitHub
+    // environment {
+    //     // Define your GitHub credentials
+    //     // GITHUB_CREDENTIALS = credentials('jenkins')
+    //     // Define the path to your private key used for accessing GitHub
         
-        // Define your server credentials
-        // SERVER_USER = 'operationsg11'
-        // SERVER_IP = '104.45.53.118'
-        // SERVER_PORT = 22
-        // SERVER_PATH = '/path/to/deploy'
-    }
+    //     // Define your server credentials
+    //     // SERVER_USER = 'operationsg11'
+    //     // SERVER_IP = '104.45.53.118'
+    //     // SERVER_PORT = 22
+    //     // SERVER_PATH = '/path/to/deploy'
+    // }
 
     stages {
 
