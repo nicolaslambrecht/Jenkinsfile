@@ -5,15 +5,14 @@ pipeline {
     agent any
 
     environment {
-        // // Define your GitHub credentials
-        // GITHUB_CREDENTIALS = credentials('jenkins')
-        // // Define the path to your private key used for accessing GitHub
-        // SSH_PRIVATE_KEY = credentials('~/.ssh/id_rsa')
+        // Define your GitHub credentials
+        GITHUB_CREDENTIALS = credentials('jenkins')
+        // Define the path to your private key used for accessing GitHub
         
         // Define your server credentials
-        SERVER_USER = 'operationsg11'
-        SERVER_IP = '104.45.53.118'
-        SERVER_PORT = 22
+        // SERVER_USER = 'operationsg11'
+        // SERVER_IP = '104.45.53.118'
+        // SERVER_PORT = 22
         // SERVER_PATH = '/path/to/deploy'
     }
 
@@ -22,7 +21,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', url: 'https://github.com/HoGentTIN/p3ops-demo-app.git'
+                    git branch: 'main', credentialsId: GITHUB_CREDENTIALS, url: 'https://github.com/HOGENTDevOpsPrj/devops-23-24-net-g11.git'
                 }
             }
         }
