@@ -49,21 +49,23 @@ pipeline {
             }
         }
 
-        stage('Publish') {
+        // stage('Publish') {
+        //     steps {
+        //         script {
+        //             // Publish the .NET project
+        //             sh 'dotnet publish -c Release -o ./publish'
+        //         }
+        //     }
+        // }
+
+        stage("deploy") {
+            
             steps {
                 script {
-                    // Publish the .NET project
-                    sh 'dotnet publish -c Release -o ./publish'
+                    sh 'scp -r . user@application-server:/path/to/destination'
                 }
             }
         }
-
-    //     stage("deploy") {
-            
-    //         steps {
-    //             // nog geen idee hoe dit te doen
-    //         }
-    //     }
     }
 
     post {
