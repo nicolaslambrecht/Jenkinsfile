@@ -6,7 +6,7 @@ pipeline {
 
     environment {
         // Define your GitHub credentials
-        GITHUB_CREDENTIALS = credentials('jenkins')
+        // GITHUB_CREDENTIALS = credentials('jenkins')
         // Define the path to your private key used for accessing GitHub
         
         // Define your server credentials
@@ -21,7 +21,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', credentialsId: $GITHUB_CREDENTIALS, url: 'https://github.com/HOGENTDevOpsPrj/devops-23-24-net-g11.git'
+                    git branch: 'main', credentialsId: 'jenkins', url: 'https://github.com/HOGENTDevOpsPrj/devops-23-24-net-g11.git'
                 }
             }
         }
