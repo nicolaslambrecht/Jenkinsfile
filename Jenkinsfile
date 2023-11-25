@@ -49,6 +49,15 @@ pipeline {
             }
         }
 
+        stage('Publish') {
+            steps {
+                script {
+                    // Publish the .NET project
+                    sh 'dotnet publish -c Release -o ./publish'
+                }
+            }
+        }
+
     //     stage("deploy") {
             
     //         steps {
