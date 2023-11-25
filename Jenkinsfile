@@ -21,7 +21,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', credentialsId: GITHUB_CREDENTIALS, url: 'https://github.com/HOGENTDevOpsPrj/devops-23-24-net-g11.git'
+                    git branch: 'main', credentialsId: $GITHUB_CREDENTIALS, url: 'https://github.com/HOGENTDevOpsPrj/devops-23-24-net-g11.git'
                 }
             }
         }
