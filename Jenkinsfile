@@ -26,11 +26,6 @@ pipeline {
             }
         }
 
-        stage('Clean Workspace') {
-            steps {
-                deleteDir()
-            }
-        }
 
         stage("build") {
             
