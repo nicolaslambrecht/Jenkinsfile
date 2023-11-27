@@ -49,23 +49,23 @@ pipeline {
             }
         }
 
-        // stage('Publish') {
+            stage('Publish') {
+                steps {
+                    script {
+                        // Publish the .NET project
+                        sh 'dotnet publish -c Release -o ./publish'
+                    }
+                }
+            }
+
+        // stage("deploy") {
+            
         //     steps {
         //         script {
-        //             // Publish the .NET project
-        //             sh 'dotnet publish -c Release -o ./publish'
+        //             sh 'scp -r . operationsg11@104.45.53.118:/home/operationsg11/test'
         //         }
         //     }
         // }
-
-        stage("deploy") {
-            
-            steps {
-                script {
-                    sh 'scp -r . operationsg11@104.45.53.118:/home/operationsg11/test'
-                }
-            }
-        }
     }
 
     post {
