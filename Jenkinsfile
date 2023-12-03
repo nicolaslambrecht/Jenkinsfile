@@ -111,7 +111,7 @@ pipeline {
                     def privateKeyFile = writeFile file: 'private-key.pem', text: privateKey
 
                     // Set permissions for the temporary directory
-                    sh "chmod -R 700 ./publish"
+                    sh "chmod -R 777 private-key.pem"
         
                     // Copy files to the application server using SCP
                     sh "scp -i ${privateKeyFile} -o StrictHostKeyChecking=no -r ./publish/* ${server}:${remoteDir}"
