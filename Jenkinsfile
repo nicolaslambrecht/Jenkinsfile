@@ -16,13 +16,9 @@ pipeline {
             steps {
                 script {
                     // git branch: 'main', url: 'https://github.com/HoGentTIN/p3ops-demo-app.git'
-                    // sh "echo $USER"
-                    // sh "pwd"
-                    // git branch: 'main', credentialsId: 'jenkins', url: 'git@github.com:HOGENTDevOpsPrj/devops-23-24-net-g11.git'
-                    sshagent(credentials: ['jenkins']) {
-                        // Use the git step to perform the checkout
-                        git branch: 'main', url: 'git@github.com:HOGENTDevOpsPrj/devops-23-24-net-g11.git'
-                    }
+                    sh "echo $USER"
+                    sh "pwd"
+                    git branch: 'main', credentialsId: 'jenkins', url: 'git@github.com:HOGENTDevOpsPrj/devops-23-24-net-g11.git'
                 }
             }
         }
