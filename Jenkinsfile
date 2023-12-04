@@ -4,10 +4,11 @@ pipeline {
 
     agent any
 
-    // environment {
-    //     // Define your GitHub credentials
-    //     // CREDENTIALS = credentials('jenkins')
-    // }
+    environment {
+        // Define your GitHub credentials
+        // CREDENTIALS = credentials('jenkins')
+        GIT_SSH_COMMAND = "ssh -i /home/vagrant/.ssh/id_rsa"
+    }
 
     stages {
 
