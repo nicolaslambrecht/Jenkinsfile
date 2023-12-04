@@ -4,10 +4,10 @@ pipeline {
 
     agent any
 
-    environment {
-        // Define your GitHub credentials
-        // CREDENTIALS = credentials('jenkins')
-    }
+    // environment {
+    //     // Define your GitHub credentials
+    //     // CREDENTIALS = credentials('jenkins')
+    // }
 
     stages {
 
