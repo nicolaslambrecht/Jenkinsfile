@@ -15,6 +15,7 @@ pipeline {
             steps {
                 script {
                     // git branch: 'main', url: 'https://github.com/HoGentTIN/p3ops-demo-app.git'
+                    sh "echo $USER"
                     git branch: 'main', credentialsId: 'jenkins', url: 'git@github.com:HOGENTDevOpsPrj/devops-23-24-net-g11.git'
                 }
             }
