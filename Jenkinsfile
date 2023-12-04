@@ -6,7 +6,7 @@ pipeline {
 
     environment {
         // Define your GitHub credentials
-        CREDENTIALS = credentials('jenkins')
+        // CREDENTIALS = credentials('jenkins')
     }
 
     stages {
