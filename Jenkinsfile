@@ -22,6 +22,7 @@ pipeline {
                     sshagent(credentials: ['jenkins']) {
                         // Use the git step to perform the checkout
                         git branch: 'main', url: 'git@github.com:HOGENTDevOpsPrj/devops-23-24-net-g11.git'
+                    }
                 }
             }
         }
