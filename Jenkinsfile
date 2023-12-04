@@ -7,7 +7,7 @@ pipeline {
     environment {
         // Define your GitHub credentials
         // CREDENTIALS = credentials('jenkins')
-        GIT_SSH_COMMAND = "ssh -i /home/vagrant/.ssh/id_rsa"
+        GIT_SSH_COMMAND = "ssh -i /var/lib/jenkins/.ssh/id_rsa"
     }
 
     stages {
