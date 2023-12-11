@@ -46,15 +46,15 @@ pipeline {
                 }
             }
 
-        stage("deploy") {
+        // stage("deploy") {
             
-            steps {
-                script {
-                    sh "pwd"
-                    sh "scp -i /home/vagrant/AppServ_key.pem -r /var/lib/jenkins/workspace/Pipe/publish/* operationsg11@104.45.53.118:/home/operationsg11/DotnetApp"
-                }
-            }
-        }
+        //     steps {
+        //         script {
+        //             sh "pwd"
+        //             sh "scp -i /home/vagrant/AppServ_key.pem -r /var/lib/jenkins/workspace/Pipe/publish/* operationsg11@104.45.53.118:/home/operationsg11/DotnetApp"
+        //         }
+        //     }
+        // }
     }
 
     post {
