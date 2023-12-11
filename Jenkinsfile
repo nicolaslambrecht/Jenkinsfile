@@ -51,7 +51,7 @@ pipeline {
             steps {
                 script {
                     sh "pwd"
-                    sh "scp -i /home/vagrant/AppServ2.pem -r /var/lib/jenkins/workspace/Pipe/publish/* operationsg11@172.201.121.190:/home/operationsg11/DotnetApp"
+                    sh "scp -i /home/vagrant/AppServ2.pem -r /var/lib/jenkins/workspace/Pipe/publish/* operationsg11@172.201.121.190:/home/operationsg11"
                 }
             }
         }
