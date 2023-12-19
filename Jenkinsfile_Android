@@ -4,6 +4,12 @@ pipeline {
 
     agent any
 
+    environment {
+
+        ANDROID_HOME = '/var/lib/jenkins/android-sdk'
+
+    }
+
     stages {
 
         stage('Checkout') {
@@ -20,7 +26,12 @@ pipeline {
             steps {
                 echo "building the application..."
                 script {
-                    // build commands here
+                    // building android environment
+                    sh "${ANDROID_HOME}/emulator/emulator -avd your_avd_name -no-audio -no-window &"
+                    sh "${ANDROID_HOME}/platform-tools/adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'"
+
+                    // build android project
+                    sh './gradlew assembleDebug'
                 }
             }
         }
@@ -30,25 +41,18 @@ pipeline {
             steps {
                 echo "testing the application..."
                 script {
-                    // testing commands here
+                    // android unit tests
+                    sh './gradlew testDebug'
                 }
             }
         }
 
-            stage('Publish') {
-                steps {
-                    script {
-                        // Publish the project
-                    }
-                }
-            }
-
-        stage("deploy") {
+        stage("deploy APK") {
             
             steps {
                 script {
-                    sh "pwd"
-                    sh "scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/AppServ2.pem -r /var/lib/jenkins/workspace/Pipe/publish/* operationsg11@172.201.121.190:/home/operationsg11"
+                    // Deploy APK to a device or emulator
+                    // sh "${ANDROID_HOME}/platform-tools/adb install -r app/build/outputs/apk/debug/app-debug.apk"
                 }
             }
         }
@@ -56,11 +60,11 @@ pipeline {
 
     post {
         success {
-            echo 'Build successful!'
+            echo 'Android build successful!'
         }
 
         failure {
-            echo 'Build failed!'
+            echo 'Android build failed!'
         }
     }
 }
