@@ -1,1 +1,66 @@
+#!/usr/bin/env groovy
 
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                script {
+                    git branch: 'main', credentialsId: 'jenkins', url: 'git@github.com:HOGENTDevOpsPrj/devops-23-24-android-g11.git'
+                }
+            }
+        }
+
+
+        stage("build") {
+            
+            steps {
+                echo "building the application..."
+                script {
+                    // build commands here
+                }
+            }
+        }
+
+        stage("test") {
+            
+            steps {
+                echo "testing the application..."
+                script {
+                    // testing commands here
+                }
+            }
+        }
+
+            stage('Publish') {
+                steps {
+                    script {
+                        // Publish the project
+                    }
+                }
+            }
+
+        stage("deploy") {
+            
+            steps {
+                script {
+                    sh "pwd"
+                    sh "scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/AppServ2.pem -r /var/lib/jenkins/workspace/Pipe/publish/* operationsg11@172.201.121.190:/home/operationsg11"
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build successful!'
+        }
+
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}
